@@ -10,6 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+//Para retornar um elemento html
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
@@ -44,7 +45,7 @@ app.get('/cobrancas', async(req, res) => {
 
   res.send(cobResponse.data);
 });
-
+//endpoint do webhook
 app.post('/webhook(/pix)?', (req, res) => {
   console.log(req.body);
   res.send('200');
